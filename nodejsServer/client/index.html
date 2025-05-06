@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const ws = new WebSocket("ws://localhost:8080");
+      
+        ws.onopen = () => {
+          ws.send("你好，服务器！");
+        };
+      
+        ws.onmessage = (event) => {
+          console.log("收到消息:", event.data);
+        };
+    </script>
+      
+</body>
+</html>
